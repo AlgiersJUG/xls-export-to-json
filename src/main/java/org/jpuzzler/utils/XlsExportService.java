@@ -7,8 +7,8 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -21,10 +21,7 @@ import java.util.List;
  */
 public class XlsExportService {
 
-    public static String toJSON(String excelDocumentFilename) throws IOException {
-
-        // load the stream
-        final FileInputStream stream = new FileInputStream(excelDocumentFilename);
+    public static String toJSON(InputStream stream) throws IOException {
 
         // create the sheet
         HSSFWorkbook workbook = new HSSFWorkbook(stream);
